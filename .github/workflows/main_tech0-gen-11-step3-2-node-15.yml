@@ -28,8 +28,16 @@ jobs:
           npm install
           npm run build
 
+      - name: Prepare standalone deployment
+        run: |
+          cp -r .next/standalone ./deploy
+          cp -r .next/static ./deploy/.next/static
+          cp -r public ./deploy/public
+
       - name: Zip artifact for deployment
-        run: zip -r node-app.zip .next package.json package-lock.json public node_modules
+        run: |
+          cd deploy
+          zip -r ../node-app.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
