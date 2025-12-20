@@ -22,7 +22,7 @@ export default function Page() {
     <>
       <div className="p-4">
         <Link href="/customers/create" className="mt-4 pt-4" prefetch={false}>
-          <button className="btn btn-neutral w-full border-0 bg-blue-200 text-black hover:text-white">
+          <button className="btn btn-neutral w-full border-0 bg-green-200 text-black hover:text-white">
             Create
           </button>
         </Link>
@@ -37,17 +37,17 @@ export default function Page() {
               <OneCustomerInfoCard {...customerInfo} />
               <div className="card-body flex flex-col justify-between">
                 <Link href={`/customers/read/${customerInfo.customer_id}`}>
-                  <button className="btn btn-neutral w-20 border-0 bg-blue-200 text-black hover:text-white">
+                  <button className="btn btn-neutral w-20 border-0 bg-green-200 text-black hover:text-white">
                     Read
                   </button>
                 </Link>
                 <Link href={`/customers/update/${customerInfo.customer_id}`}>
-                  <button className="btn btn-neutral w-20 border-0 bg-blue-200 text-black hover:text-white">
+                  <button className="btn btn-neutral w-20 border-0 bg-green-200 text-black hover:text-white">
                     Update
                   </button>
                 </Link>
                 <Link href={`/customers/delete/${customerInfo.customer_id}`}>
-                  <button className="btn btn-neutral w-20 border-0 bg-blue-200 text-black hover:text-white">
+                  <button className="btn btn-neutral w-20 border-0 bg-green-200 text-black hover:text-white">
                     Delete
                   </button>
                 </Link>
