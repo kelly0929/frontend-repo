@@ -31,6 +31,8 @@ jobs:
         run: |
           cp -r .next/standalone ./deploy
           cp -r .next/static ./deploy/.next/static
+          cp package.json ./deploy/
+          cp package-lock.json ./deploy/ 2>/dev/null || true
           if [ -d "public" ]; then cp -r public ./deploy/public; fi
       - name: Zip artifact for deployment
         run: |
@@ -60,3 +62,4 @@ jobs:
           package: .
 
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A02667DF358447418C9E4D7E563B6816 }}
+
